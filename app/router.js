@@ -7,6 +7,12 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('bank-accounts');
+
+  this.route('bank-account', function() {
+    this.route('view');
+    this.route('new');
+  });
 });
 
 export default Router;
