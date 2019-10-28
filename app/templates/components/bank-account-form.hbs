@@ -1,0 +1,15 @@
+<PowerSelect
+  @selected={{this.selectedBranch}}
+  @options={{this.branchOptions}}
+  @onChange={{action (mut this.selectedBranch)}} as |branchName|
+>
+{{branchName}}
+</PowerSelect>
+<PowerSelect
+  @selected={{this.selectedAccountType}}
+  @options={{this.accountTypeOptions}}
+  @onChange={{action (mut this.selectedAccountType)}} as |accountType|
+>
+{{accountType}}
+</PowerSelect>
+<button type="submit">Create Account</button>

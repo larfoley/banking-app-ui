@@ -1,1 +1,42 @@
-{{outlet}}
+<MainToolbar />
+<div class="page-container">
+  <div class="page-header">
+    <h1>{{this.bankAccountName}}</h1>
+    <button class="button" {{action 'deleteBankAccount'}}>Delete Account</button>
+  </div>
+  <BankAccountOverview
+    @bankAccountName={{this.bankAccountName}}
+    @iban={{this.iban}}
+    @bic={{this.bic}}
+    @balance={{this.balance}}
+    @bankAccounts={{this.bankAccounts}}
+  />
+
+  <div class="navbar">
+    <LinkTo
+      @route="bank-accounts.view.transactions"
+      @model={{this.bankAccountId}}
+    >
+      Transactions
+    </LinkTo>
+    <LinkTo
+      @route="bank-accounts.view.transfer-funds"
+      @model={{this.bankAccountId}}
+    >
+      Transfer
+    </LinkTo>
+    <LinkTo
+      @route="bank-accounts.view.withdraw-funds"
+      @model={{this.bankAccountId}}
+    >
+      Withdraw
+    </LinkTo>
+    <LinkTo
+      @route="bank-accounts.view.lodge-funds"
+      @model={{this.bankAccountId}}
+    >
+      Lodge
+    </LinkTo>
+  </div>
+    {{outlet}}
+</div>

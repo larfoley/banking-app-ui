@@ -1,0 +1,7 @@
+{{#each this.bankAccounts as |account|}}
+  <BankAccount
+    @bankAccountType={{account.accountType}}
+    @amount={{account.balance}}
+    @id={{account.id}}
+  />
+{{/each}}

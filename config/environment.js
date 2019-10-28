@@ -16,6 +16,11 @@ module.exports = function(environment) {
         Date: false
       }
     },
+    googleFonts: [
+     'Open+Sans:300,400,700',
+     'Roboto:300',
+     'NTR'
+   ],
 
     APP: {
       // Here you can pass flags/options to your application instance
@@ -44,8 +49,10 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    // here you can enable a production-specific feature
   }
+  // ENV['ember-cli-mirage'] = {
+  //     enabled: false
+  //   };
 
   return ENV;
 };

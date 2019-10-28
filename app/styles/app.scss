@@ -1,0 +1,36 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  background-color: #f5f5f5;
+  font-family: "NTR", "Roboto";
+  line-height: 1;
+}
+
+
+@import "variables";
+@import "utils";
+@import "grid";
+@import "layout";
+@import "typeography";
+@import "components/all";
+
+.ember-power-select-trigger {
+  background-color: #e8ebed !important;
+  border: none !important;
+}
+$ember-power-select-line-height: 2.5 !default;
+$ember-power-select-dropdown-border: 1px solid pink !default;
+// $ember-power-select-border-color: none;
+// $ember-power-select-border-color: red !default;
+// $ember-power-select-trigger-icon-color: red !default;
+// $ember-power-select-highlighted-background: red !default;
+// $ember-power-select-selected-background: red !default;
+// $ember-power-select-focus-border-color: red !default;
+
+@import "ember-power-select";

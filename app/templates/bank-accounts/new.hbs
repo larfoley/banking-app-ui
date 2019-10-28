@@ -1,1 +1,5 @@
-new bank account
+<BankAccountForm
+  @branchOptions={{this.branchOptions}}
+  @accountTypeOptions={{this.accountTypeOptions}}
+  @onCreateBankAccount={{action "createBankAccount"}}
+/>

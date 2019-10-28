@@ -1,0 +1,43 @@
+<div class="card">
+  <div class="grid grid-cols__2 grid-row-gap__2 grid-col-gap__2">
+    <div>
+      <h3>Credit Card</h3>
+      <div class="grid grid-cols__2 grid-row-gap__1 grid-col-gap__1">
+        <div class="grid-col__1-3">
+          <label for="">Name</label>
+          <input type="text" name="" value="">
+        </div>
+        <div class="grid-col__1-3">
+          <label for="">Card number</label>
+          <input type="text" name="" value="">
+        </div>
+        <div>
+          <label for="">Expirary Date</label>
+          <input type="date" name="df">
+        </div>
+        <div>
+          <label for="">CVV</label>
+          <input type="text" name="" value="">
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3>Withdraw Funds</h3>
+      <p>Widthdrawel amount:</p>
+      <div class="h4">
+        {{this.withdrawAmount}}
+      </div>
+      <input
+        type="range"
+        oninput={{action (mut this.withdrawAmount) value="target.value"}}
+        min={{min}}
+        max={{this.max}}
+        steps="1"
+        value={{withdrawAmount}}
+      >
+
+      {{log this}}
+      <button class="button"> Transfer Funds</button>
+    </div>
+  </div>
+</div>

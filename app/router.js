@@ -8,9 +8,17 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('bank-accounts', function() {
-    this.route('view');
+    this.route('view', { path: '/:id' }, function() {
+      this.route('transactions');
+      this.route('transfer-funds');
+      this.route('withdraw-funds');
+      this.route('lodge-funds');
+    });
     this.route('new');
   });
+  this.route('404');
+  this.route('sign-in');
+  this.route('sign-up');
 });
 
 export default Router;

@@ -1,0 +1,35 @@
+.ember-table table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th:nth-child(1) {
+    width: 50%;
+  }
+  //
+  // thead th:nth-child(2) {
+  //   width: 20%;
+  // }
+  //
+  // thead th:nth-child(3) {
+  //   width: 15%;
+  // }
+  //
+  // thead th:nth-child(4) {
+  //   width: 35%;
+  // }
+
+  th {
+    text-align: left;
+  }
+  th, td {
+    padding: 20px;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+  }
+
+  tbody tr:nth-child(even) {
+    // background-color: #e495e4;
+  }
+}

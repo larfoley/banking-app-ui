@@ -1,0 +1,50 @@
+<div class="card">
+  <div class="grid grid-cols__3 grid-col-gap__2">
+    <div>
+      <h3 class="h3">
+        From
+      </h3>
+      <div class="bank-account-card">
+        <div class="bank-account-card__account">
+          Current Account
+        </div>
+        <div class="bank-account-card__balance">
+          3456
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 class="h3">
+        To
+      </h3>
+      {{#if this.accountOptions.length}}
+        <PowerSelect
+          @selected={{this.selectedAccount}}
+          @options={{this.accountOptions}}
+          @onChange={{action (mut this.selectedAccount)}} as |account|
+        >
+          {{account.name}}
+        </PowerSelect>
+      {{else}}
+        <p>You do not have any other accounts to transfer to.</p>
+      {{/if}}
+    </div>
+    <div>
+      <h3 class="h3">
+        Amount
+      </h3>
+      <p class="h1">
+        {{transferAmount}}
+        <input
+          type="range"
+          oninput={{action (mut this.transferAmount) value="target.value"}}
+          min={{min}}
+          max={{this.max}}
+          steps="1"
+          value={{transferAmount}}
+        >
+      </p>
+      <button class="button">Transfer Funds</button>
+    </div>
+  </div>
+</div>

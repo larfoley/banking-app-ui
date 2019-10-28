@@ -1,0 +1,8 @@
+.bank-accounts {
+  display: grid;
+  grid-gap: 2em;
+
+  @media screen and (min-width: 700px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

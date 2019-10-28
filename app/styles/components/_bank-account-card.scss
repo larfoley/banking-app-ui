@@ -1,0 +1,13 @@
+.bank-account-card {
+  background-color: $primary-color;
+  color: white;
+  padding: .7em;
+  border-radius: 4px;
+
+  &__balance {
+    font-size: 1.7em;
+  }
+
+  &__account {
+  }
+}
