@@ -1,6 +1,22 @@
 .bank-account {
-  text-align: center;
+  // text-align: center;
   // width: 300px;
+  @extend .card;
+  padding: 0;
+
+  &__header {
+    border-top: 5px solid $primary-color;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    padding: 1em;
+    padding-bottom: 0;
+  }
+
+  &__body {
+    padding: 1.5em;
+    padding-top: 7px;
+  }
+
   a {
     color: black;
     text-decoration: none;
@@ -8,10 +24,16 @@
 
   h2 {
     margin: 0;
-    font-size: 2.7em;
+    font-size: 2em;
+    color: #2ecc71;
+    margin-top: 7px;
   }
 
   p {
     margin: 0;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-transform: capitalize;
+    // color: $primary-color;
   }
 }

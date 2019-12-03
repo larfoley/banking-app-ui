@@ -1,0 +1,9 @@
+.crud-card {
+  @extend .card;
+  margin-bottom: 2em;
+  a {
+    color: $primary-color;
+    text-decoration: none;
+    margin-left: 1em;
+  }
+}

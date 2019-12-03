@@ -8,8 +8,17 @@ input {
   border-radius: 4px;
   outline: none;
 
+  &.isInValid, &:focus {
+    border: 1px solid #ff5252;
+  }
+
   &:focus {
     border: 2px solid #e8ebed;
     background: white;
   }
+}
+
+label {
+  display: inline-block;
+  margin: 7px 0;
 }

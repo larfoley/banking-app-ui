@@ -3,8 +3,12 @@
     <div class="bank-account-overview__account-name">
       <small>Account</small>
       <div class="h5">
+        {{#if this.bankAccounts.length}}
         <BasicDropdown as |dd|>
-          <dd.Trigger>Change Account <FaIcon @icon="caret-down"/></dd.Trigger>
+          <dd.Trigger>
+            {{this.bankAccount.name}}
+                <FaIcon @icon="caret-down"/>
+            </dd.Trigger>
           <dd.Content>
             <div {{action 'closeDropDown' dd}}>
               {{#each this.bankAccounts as |account|}}
@@ -19,25 +23,28 @@
             </div>
           </dd.Content>
         </BasicDropdown>
+        {{else}}
+          {{this.bankAccount.name}}
+        {{/if}}
       </div>
     </div>
     <div>
-      <small>Balance</small>
-      <p class="h2">${{this.balance}}</p>
+      <small>Account Balance</small>
+      <p class="h2">{{this.bankAccount.displayBalance}}</p>
     </div>
   </div>
   <div class="bank-account-overview__body">
     <p>
       <div class="h6">IBAN</div>
-      <span>{{this.iban}}</span>
+      <span>{{this.bankAccount.iban}}</span>
     </p>
     <p>
       <div class="h6">BIC</div>
-      <span>{{this.iban}}</span>
+      <span>{{this.bankAccount.bic}}</span>
     </p>
     <p>
       <div class="h6">SORT</div>
-      <span>{{this.iban}}</span>
+      <span>{{this.bankAccount.sortCode}}</span>
     </p>
   </div>
 </div>

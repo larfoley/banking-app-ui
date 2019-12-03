@@ -1,0 +1,33 @@
+<div class="page-header">
+  <h1></h1>
+  <LinkTo class="" @route="admin.branches.new">
+    <FaIcon @icon="plus" /> New Branch
+  </LinkTo>
+</div>
+
+<div class="card">
+  <EmberTable as |t|>
+    <t.head @columns={{columnsForRowsWithComponents}} />
+
+    <t.body @rows={{rowsWithComponents}} as |b|>
+      <b.row as |r|>
+        <r.cell as |cell column row|>
+            {{#if (this.is-action-column column)}}
+              <div class="actions">
+                {{#link-to 'admin.branches.edit' cell class="action-link"}}
+                  <FaIcon @icon="edit"/>
+                  Edit
+                {{/link-to}}
+                <span {{action 'deleteBranch' cell}} class="action-link">
+                  <FaIcon @icon="trash"/>
+                  Delete
+                </span>
+              </div>
+            {{else}}
+              {{cell}}
+            {{/if}}
+        </r.cell>
+      </b.row>
+    </t.body>
+  </EmberTable>
+</div>

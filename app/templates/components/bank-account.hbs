@@ -1,9 +1,11 @@
-<Card>
-  <LinkTo
-    @route="bank-accounts.view"
-    @model={{this.id}}
-  >
-    <p>{{this.bankAccountType}}</p>
-    <h2>{{this.amount}}</h2>
-  </LinkTo>
-</Card>
+<LinkTo
+  @route="bank-accounts.view"
+  @model={{this.id}}
+>
+<div class="bank-account__header">
+  <p>{{this.bankAccountType}} Account</p>
+</div>
+<div class="bank-account__body">
+  <h2>{{this.amount}}</h2>
+</div>
+</LinkTo>

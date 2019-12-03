@@ -1,15 +1,32 @@
-<PowerSelect
-  @selected={{this.selectedBranch}}
-  @options={{this.branchOptions}}
-  @onChange={{action (mut this.selectedBranch)}} as |branchName|
->
-{{branchName}}
-</PowerSelect>
-<PowerSelect
-  @selected={{this.selectedAccountType}}
-  @options={{this.accountTypeOptions}}
-  @onChange={{action (mut this.selectedAccountType)}} as |accountType|
->
-{{accountType}}
-</PowerSelect>
-<button type="submit">Create Account</button>
+<div class="card">
+  <h2>
+    {{#if this.isUpdating}}
+      Update Account
+    {{else}}
+      Create new account
+    {{/if}}
+  </h2>
+  <div class="section">
+    <label>Account type</label>
+    <PowerSelect
+      @selected={{this.selectedAccountType}}
+      @options={{this.accountTypeOptions}}
+      @onChange={{action (mut this.selectedAccountType)}} as |accountType|
+    >
+      {{accountType.name}}
+    </PowerSelect>
+  </div>
+  <div class="section">
+    <label>Branch</label>
+    <PowerSelect
+      @selected={{this.selectedBranch}}
+      @options={{this.branchOptions}}
+      @onChange={{action (mut this.selectedBranch)}} as |branchName|
+    >
+      {{branchName.name}}
+    </PowerSelect>
+  </div>
+  <button class="button" type="submit">
+    {{if this.isUpdating "Update Account" "Create Account"}}
+  </button>
+</div>

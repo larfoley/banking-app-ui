@@ -1,4 +1,7 @@
-import Route from '@ember/routing/route';
+import UnprotectedRoute from './unprotected-route';
 
-export default Route.extend({
+export default UnprotectedRoute.extend({
+  model() {
+    return this.store.createRecord('user');
+  }
 });

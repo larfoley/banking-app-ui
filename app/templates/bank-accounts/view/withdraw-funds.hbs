@@ -1,3 +1,5 @@
 <WithdrawFundsForm
-  @max={{this.model.bankAccount.balance}}
+  @max={{this.model.bankAccount.dividedBalance}}
+  @onWithdrawFunds={{action 'withdrawFunds'}}
+  @accountId={{this.model.bankAccount.id}}
 />

@@ -2,7 +2,7 @@ import Component from '@ember/component';
 import { computed } from '@ember/object';
 
 export default Component.extend({
-  columns: computed(function() {
+  columns: computed('transactions.[]', function() {
     return [
       {
         name: `Date`,
@@ -22,12 +22,12 @@ export default Component.extend({
       },
       {
         name: `Balance`,
-        valuePath: `postBalance`
+        valuePath: `displayPostBalance`
       }
     ];
   }),
 
-  rows: computed(function() {
+  rows: computed('transactions.[]', function() {
     return this.get('transactions').toArray();
   })
 });

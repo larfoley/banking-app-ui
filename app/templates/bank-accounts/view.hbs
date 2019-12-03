@@ -1,39 +1,48 @@
 <MainToolbar />
 <div class="page-container">
   <div class="page-header">
-    <h1>{{this.bankAccountName}}</h1>
-    <button class="button" {{action 'deleteBankAccount'}}>Delete Account</button>
+    <h1></h1>
+    <LinkTo class="" @route="bank-accounts.new">
+      <FaIcon @icon="plus" /> New Account
+    </LinkTo>
+    <LinkTo class="" @route="bank-accounts.edit" @model={{this.bankAccountId}}>
+      <FaIcon @icon="edit" /> Edit Account
+    </LinkTo>
+    <span role="button" {{action 'deleteBankAccount'}}>
+      <FaIcon @icon="trash" /> Delete Account
+    </span>
   </div>
+  {{log "Account"}}
+  {{log this.model.bankAccount}}
+  {{log 'Accounts'}}
+  {{log this.model.bankAccounts}}
   <BankAccountOverview
-    @bankAccountName={{this.bankAccountName}}
-    @iban={{this.iban}}
-    @bic={{this.bic}}
-    @balance={{this.balance}}
-    @bankAccounts={{this.bankAccounts}}
+    @bankAccount={{this.model.bankAccount}}
+    @bankAccounts={{this.model.bankAccounts}}
   />
 
   <div class="navbar">
     <LinkTo
       @route="bank-accounts.view.transactions"
-      @model={{this.bankAccountId}}
+      @model={{this.model.bankAccount.id}}
     >
       Transactions
     </LinkTo>
     <LinkTo
       @route="bank-accounts.view.transfer-funds"
-      @model={{this.bankAccountId}}
+      @model={{this.model.bankAccount.id}}
     >
       Transfer
     </LinkTo>
     <LinkTo
       @route="bank-accounts.view.withdraw-funds"
-      @model={{this.bankAccountId}}
+      @model={{this.model.bankAccount.id}}
     >
       Withdraw
     </LinkTo>
     <LinkTo
       @route="bank-accounts.view.lodge-funds"
-      @model={{this.bankAccountId}}
+      @model={{this.model.bankAccount.id}}
     >
       Lodge
     </LinkTo>

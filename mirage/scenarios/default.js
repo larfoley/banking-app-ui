@@ -6,8 +6,7 @@ export default function(server) {
   */
 
   // server.createList('post', 10);
-  server.createList('bank-account', 4);
-  server.createList('transaction', 10);
+
   server.create('accountType', {
     name: "Standard"
   });
@@ -26,4 +25,7 @@ export default function(server) {
   server.create('branch', {
     name: "BLA"
   });
+
+  server.createList('bank-account', 4);
+  server.createList('transaction', 10);
 }

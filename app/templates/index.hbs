@@ -1,1 +1,29 @@
-{{outlet}}
+<div class="landing-page__hero">
+  <div class="page-container">
+    <h1><FaIcon @icon="university" /> NCI Banking</h1>
+    <p>Welcome to the National College of Ireland's Online Banking Service.</p>
+    {{#link-to 'sign-up' class="button"}}
+      Sign Up
+    {{/link-to}}
+    {{#link-to 'sign-in' class="button button--secondary"}}
+      Sign In
+    {{/link-to}}
+  </div>
+</div>
+<div class="page-container grid grid-cols__3 grid-col-gap__2">
+  <div class="landing-page__card">
+    <FaIcon @icon="exchange-alt" @size="2x"/>
+    <h2>Lodge Funds</h2>
+    <p>With NCI Banking you can now make lodgements anytime and anywhere.</p>
+  </div>
+  <div class="landing-page__card">
+    <FaIcon @icon="money-bill-wave" @size="2x"/>
+    <h2>Transfer Funds</h2>
+    <p>Using NCI's Banking Service you can transfer funds anytime and anywhere.</p>
+  </div>
+  <div class="landing-page__card">
+    <FaIcon @icon="credit-card" @size="2x"/>
+    <h2>Withdraw Funds</h2>
+    <p>Using NCI's Banking service you can now credit a card anytime and anywhere.</p>
+  </div>
+</div>

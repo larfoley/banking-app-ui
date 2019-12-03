@@ -4,5 +4,5 @@ const { Model, attr } = DS;
 export default Model.extend({
   name: attr('string'),
   address: attr('string'),
-  phone: attr('string'),
+  phoneNumber: attr('string'),
 });

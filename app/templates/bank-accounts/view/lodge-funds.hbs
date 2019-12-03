@@ -1,1 +1,4 @@
-<LodgeFundsForm />
+<LodgeFundsForm
+  @onLodgeFunds={{action 'lodgeFunds'}}
+  @accountId={{this.model.bankAccount.id}}
+/>

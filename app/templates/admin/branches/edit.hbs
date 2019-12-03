@@ -1,0 +1,8 @@
+<p class="breadcrumbs">
+  {{#link-to 'admin.branches'}}
+    <FaIcon @icon="arrow-left" /> Branches
+  {{/link-to}}
+</p>
+<BranchForm
+  @branch={{this.model}}
+/>

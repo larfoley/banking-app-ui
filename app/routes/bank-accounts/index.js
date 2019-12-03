@@ -1,7 +1,7 @@
-import Route from '@ember/routing/route';
+import ProtectedRoute from '../protected-route';
 
-export default Route.extend({
+export default ProtectedRoute.extend({
   model() {
-    return this.store.findAll('bank-account');
+    return this.store.findAll('bank-account')
   }
 });

@@ -1,0 +1,34 @@
+<form class="card">
+  <h1 class="center">Profile</h1>
+  <div class="section">
+    <label>Full Name</label>
+    {{#if this.user.errors.fullName}}
+      {{input class="isInValid" disabled=this.user.isSaving value=this.user.fullName}}
+      {{#each this.user.errors.fullName as |error|}}
+        <div class="message-box message-box--error">
+          <p>{{error.message}}</p>
+        </div>
+      {{/each}}
+    {{else}}
+      {{input disabled=this.user.isSaving value=this.user.fullName}}
+    {{/if}}
+  </div>
+  <div class="section">
+    <label>Address</label>
+    {{#if this.user.errors.address}}
+      {{input class="isInValid" disabled=this.user.isSaving value=this.user.address}}
+      {{#each this.user.errors.address as |error|}}
+        <div class="message-box message-box--error">
+          <p>{{error.message}}</p>
+        </div>
+      {{/each}}
+    {{else}}
+      {{input disabled=this.user.isSaving value=this.user.address}}
+    {{/if}}
+  </div>
+  <div class="flex align-items__center">
+    <button class="button" disabled={{this.user.isSaving}} >
+      {{if this.user.isSaving "Updating..." "Update Profile"}}
+    </button>
+  </div>
+</form>

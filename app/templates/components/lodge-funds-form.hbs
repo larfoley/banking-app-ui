@@ -5,27 +5,36 @@
       <div class="grid grid-cols__2 grid-row-gap__1 grid-col-gap__1">
         <div class="grid-col__1-3">
           <label for="">Name</label>
-          <input type="text" name="" value="">
+          {{input type="text" name="" value=this.cardHolderName}}
         </div>
         <div class="grid-col__1-3">
           <label for="">Card number</label>
-          <input type="text" name="" value="">
+          {{input type="text" value=this.cardNumer}}
         </div>
         <div>
-          <label for="">Expirary Date</label>
-          <input type="date" name="df">
+          <div>
+            <label>
+              Expirary Date
+            </label>
+            {{pikaday-input format="MM/YY" onSelection=(action 'setDate')}}
+          </div>
         </div>
         <div>
-          <label for="">CVV</label>
-          <input type="text" name="" value="">
+          <label >CVV</label>
+          {{input type="text" value=this.cvv}}
         </div>
       </div>
     </div>
     <div>
       <h3>Lodge Funds</h3>
       <div class="section">
-        <label for="">Amount</label>
-        <input />
+        <label>Amount</label>
+        <div class="flex">
+          <div class="currency">
+            €
+          </div>
+          {{input value=this.amount type="number" step=".01" placeholder="0"}}
+        </div>
       </div>
       <button class="button">Lodge Funds</button>
     </div>

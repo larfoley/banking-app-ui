@@ -1,0 +1,9 @@
+<MainToolbar />
+<div class="page-container">
+  <BankAccountForm
+    @branchOptions={{this.branchOptions}}
+    @bankAccount={{this.model.bankAccount}}
+    @accountTypeOptions={{this.accountTypeOptions}}
+    @onUpdateBankAccount={{action "updateBankAccount"}}
+  />
+</div>

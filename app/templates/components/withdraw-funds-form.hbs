@@ -5,39 +5,34 @@
       <div class="grid grid-cols__2 grid-row-gap__1 grid-col-gap__1">
         <div class="grid-col__1-3">
           <label for="">Name</label>
-          <input type="text" name="" value="">
+          {{input type="text" name="" value=this.cardHolderName}}
         </div>
         <div class="grid-col__1-3">
           <label for="">Card number</label>
-          <input type="text" name="" value="">
+          {{input type="text" value=this.cardNumer}}
         </div>
         <div>
-          <label for="">Expirary Date</label>
-          <input type="date" name="df">
+          <label>
+            Expirary Date
+          </label>
+          {{pikaday-input format="MM/YY" onSelection=(action 'setDate')}}
         </div>
         <div>
-          <label for="">CVV</label>
-          <input type="text" name="" value="">
+          <label >CVV</label>
+          {{input type="text" value=this.cvv}}
         </div>
       </div>
     </div>
     <div>
       <h3>Withdraw Funds</h3>
-      <p>Widthdrawel amount:</p>
-      <div class="h4">
-        {{this.withdrawAmount}}
+      <p>Amount:</p>
+      <div class="flex section">
+        <div class="currency">
+          €
+        </div>
+        {{input value=this.amount type="number" step=".01" placeholder="0"}}
       </div>
-      <input
-        type="range"
-        oninput={{action (mut this.withdrawAmount) value="target.value"}}
-        min={{min}}
-        max={{this.max}}
-        steps="1"
-        value={{withdrawAmount}}
-      >
-
-      {{log this}}
-      <button class="button"> Transfer Funds</button>
+      <button class="button">Withdraw Funds</button>
     </div>
   </div>
 </div>

@@ -19,12 +19,15 @@ module.exports = function(environment) {
     googleFonts: [
      'Open+Sans:300,400,700',
      'Roboto:300',
-     'NTR'
+     'Bree Serif',
+     'NTR',
+     'Nunito'
    ],
 
     APP: {
       // Here you can pass flags/options to your application instance
-      // when it is created
+      host: 'https://nci-online-banking-service.herokuapp.com',
+      namespace: 'api'
     }
   };
 
@@ -49,10 +52,15 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    ENV['ember-cli-mirage'] = {
+      // enabled: false
+    };
   }
-  // ENV['ember-cli-mirage'] = {
-  //     enabled: false
-  //   };
+
+  ENV['ember-cli-mirage'] = {
+    enabled: false
+  };
+
 
   return ENV;
 };

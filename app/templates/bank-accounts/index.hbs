@@ -2,7 +2,9 @@
 <div class="page-container">
   <div class="page-header">
     <h1>My Accounts</h1>
-    <LinkTo @route="bank-accounts.new">+ New Account</LinkTo>
+    <LinkTo @route="bank-accounts.new">
+      <FaIcon @icon="plus" /> New Account
+    </LinkTo>
   </div>
   <BankAccounts @bankAccounts={{this.model}} />
 </div>

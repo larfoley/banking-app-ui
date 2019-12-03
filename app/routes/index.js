@@ -1,7 +1,4 @@
-import Route from '@ember/routing/route';
+import UnprotectedRoute from './unprotected-route';
 
-export default Route.extend({
-  redirect() {
-    this.transitionTo('bank-accounts');
-  }
+export default UnprotectedRoute.extend({
 });

@@ -1,8 +1,5 @@
 import Route from '@ember/routing/route';
 import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
-import DS from 'ember-data';
-
-const { NotFoundError } = DS;
 
 import { inject as service } from '@ember/service';
 
@@ -20,16 +17,8 @@ export default Route.extend(ApplicationRouteMixin, {
   },
 
   _loadCurrentUser() {
-    return this.get('currentUser').load().catch(() => this.get('session').invalidate());
-  },
-
-  actions: {
-    // error(error) {
-    //   if (error instanceof NotFoundError) {
-    //     this.transitionTo('404')
-    //   };
-    //
-    //   return true;
-    // }
+    return this.get('currentUser').load().catch(() => {
+      this.get('session').invalidate()
+    });
   }
 });

@@ -1,5 +1,7 @@
 <TransferFundsForm
   @accountBalance={{this.model.bankAccount.balance}}
+  @fromAccountId={{this.model.bankAccount.id}}
   @account={{this.model.bankAccount}}
   @bankAccounts={{this.model.bankAccounts}}
+  @onTransferFunds={{action 'transferFunds'}}
 />

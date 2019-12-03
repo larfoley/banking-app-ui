@@ -1,12 +1,38 @@
 <ul>
   <li>
-    <LinkTo @route="bank-accounts">
-      NCI Banking
+    <LinkTo @route="bank-accounts" class="logo">
+      <FaIcon @icon="university" /> NCIB
     </LinkTo>
   </li>
+  {{#if session.isAuthenticated}}
   <li>
-    <div class="">
-      accounts
-    </div>
+    <BasicDropdown as |dd|>
+      <dd.Trigger>
+        <span class="username">{{this.username}}</span>
+        <FaIcon @icon="user-circle" />
+      </dd.Trigger>
+      <dd.Content>
+        <ul>
+          <li>
+            <LinkTo @route="profile" >
+              <FaIcon @icon="user" /> Profile
+            </LinkTo>
+          </li>
+          {{#if this.isAdmin}}
+          <li>
+            <LinkTo @route="admin.users" >
+              <FaIcon @icon="user-cog" /> Admin
+            </LinkTo>
+          </li>
+          {{/if}}
+          <li {{action 'logout'}}>
+            <FaIcon @icon="sign-out-alt" /> Sign Out
+          </li>
+        </ul>
+      </dd.Content>
+    </BasicDropdown>
+
   </li>
+
+  {{/if}}
 </ul>

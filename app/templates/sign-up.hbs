@@ -1,1 +1,7 @@
-{{outlet}}
+<MainToolbar />
+<div class="page-container page-container--small">
+  <SignUpForm
+    @onSignUp={{action "createAccount"}}
+    @user={{this.model}}
+  />
+</div>

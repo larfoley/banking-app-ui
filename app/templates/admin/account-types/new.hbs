@@ -1,0 +1,9 @@
+<p class="breadcrumbs">
+  {{#link-to 'admin.account-types'}}
+    <FaIcon @icon="arrow-left" /> Account Types
+  {{/link-to}}
+</p>
+<AccountTypeForm
+  @isUpdating={{false}}
+  @onCreateAccountType={{action "createNewAccountType"}}
+/>

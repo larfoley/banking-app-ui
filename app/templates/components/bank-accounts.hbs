@@ -1,7 +1,7 @@
 {{#each this.bankAccounts as |account|}}
   <BankAccount
-    @bankAccountType={{account.accountType}}
-    @amount={{account.balance}}
+    @bankAccountType={{account.accountType.name}}
+    @amount={{account.displayBalance}}
     @id={{account.id}}
   />
 {{/each}}

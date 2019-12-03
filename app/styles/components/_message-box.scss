@@ -1,0 +1,13 @@
+.message-box {
+  padding: 1em;
+  border-radius: 4px;
+  margin: 1em 0;
+
+  p {
+    margin: 0;
+  }
+  &--error {
+    background-color: #ffb8b8;
+    color: darken(#ffb8b8, 20%);
+  }
+}

@@ -1,32 +1,31 @@
 import Controller from '@ember/controller';
 import { computed } from '@ember/object';
+import { inject as service } from '@ember/service';
 
 export default Controller.extend({
-  bankAccountName: computed(function() {
-    return this.get('model.bankAccount.name');
+  currentUser: service(),
+
+  bankAccountName: computed('model.bankAccount.accountType.name', function() {
+    return this.get('model.bankAccount.accountType.name');
   }),
 
-  iban: computed(function() {
-    return this.get('model.bankAccount.iban');
+  bankAccountBalance: computed('model.bankAccount.balance', function() {
+    return this.get('model.bankAccount.displayBalance');
   }),
 
-  bic: computed(function() {
-    return this.get('model.bankAccount.iban');
+  balance: computed('model.bankAccount.displayBalance', function() {
+    return this.get('model.bankAccount.displayBalance');
   }),
 
-  balance: computed(function() {
-    return this.get('model.bankAccount.balance');
-  }),
-
-  transactions: computed(function() {
+  transactions: computed('model.transactions.[]', function() {
     return this.get('model.transactions');
   }),
 
-  bankAccounts: computed(function() {
+  bankAccounts: computed('model.bankAccounts.[]', function() {
     return this.get('model.bankAccounts');
   }),
 
-  bankAccountId: computed(function() {
+  bankAccountId: computed('model.bankAccount.id', function() {
     return this.get('model.bankAccount.id');
   }),
 

@@ -1,0 +1,26 @@
+<div class="page-container page-container--small">
+  <div class="card">
+    <h1 class="center">Sign In</h1>
+    {{#if this.errorMessage}}
+      <div class="message-box message-box--error">
+        {{this.errorMessage}}
+      </div>
+    {{/if}}
+    <div class="section">
+      <label for="">Email</label>
+      {{input type="text" disabled=this.isSigningIn value=this.email}}
+    </div>
+    <div class="section">
+      <label for="">Password</label>
+      {{input disabled=this.isSigningIn type="password" name="" value=this.password}}
+    </div>
+    <div class="flex align-items__center">
+      <div class="flex-grow__1">
+        Dont have an account ? <LinkTo @route="sign-up">Create account</LinkTo>.
+      </div>
+      <button class="button">
+        {{if this.isSigningIn "Signing in..." "Sign In"}}
+      </button>
+    </div>
+  </div>
+</div>

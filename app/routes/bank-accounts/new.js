@@ -1,7 +1,7 @@
-import Route from '@ember/routing/route';
+import ProtectedRoute from '../protected-route';
 import { hash } from 'rsvp';
 
-export default Route.extend({
+export default ProtectedRoute.extend({
   model() {
     return hash({
       accountTypes: this.store.findAll('accountType'),

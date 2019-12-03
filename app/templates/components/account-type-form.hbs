@@ -1,0 +1,20 @@
+<div class="card">
+  <h2>
+    {{#if this.isUpdating}}
+      Update Account Type
+    {{else}}
+      Create Account Type
+    {{/if}}
+  </h2>
+  <div class="section">
+    <label>Name</label>
+    {{#if this.isUpdating}}
+      {{input value=this.accountType.name}}
+    {{else}}
+      {{input value=this.name}}
+    {{/if}}
+  </div>
+  <button class="button" type="submit">
+    Save
+  </button>
+</div>

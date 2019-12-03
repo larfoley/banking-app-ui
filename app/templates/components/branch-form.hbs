@@ -1,0 +1,24 @@
+<div class="card">
+  <h2>
+    {{#if this.branch.isNew}}
+      Create new Branch
+    {{else}}
+      Update Branch
+    {{/if}}
+  </h2>
+  <div class="section">
+    <label>Name</label>
+    {{input value=this.branch.name}}
+  </div>
+  <div class="section">
+    <label>Address</label>
+    {{input value=this.branch.address}}
+  </div>
+  <div class="section">
+    <label>Phone Number</label>
+    {{input value=this.branch.phoneNumber}}
+  </div>
+  <button class="button" type="submit">
+    {{if this.branch.isNew "Create Branch" "Update Branch"}}
+  </button>
+</div>

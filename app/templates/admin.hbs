@@ -1,0 +1,23 @@
+<MainToolbar />
+<div class="admin-header">
+  <h1>Admin Dashboard</h1>
+</div>
+<nav class="admin-nav">
+  {{#link-to 'admin.users'}}
+    <FaIcon @icon="user"/>
+    <span>
+      Users
+    </span>
+  {{/link-to}}
+  {{#link-to 'admin.account-types'}}
+  <FaIcon @icon="hand-holding-usd"/>
+  <span>Account types</span>
+  {{/link-to}}
+  {{#link-to 'admin.branches'}}
+  <FaIcon @icon="compass"/>
+  <span>Branches</span>
+  {{/link-to}}
+</nav>
+<div class="admin-page-container">
+  {{outlet}}
+</div>

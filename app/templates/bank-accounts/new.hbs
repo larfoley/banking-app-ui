@@ -1,5 +1,8 @@
-<BankAccountForm
-  @branchOptions={{this.branchOptions}}
-  @accountTypeOptions={{this.accountTypeOptions}}
-  @onCreateBankAccount={{action "createBankAccount"}}
-/>
+<MainToolbar />
+<div class="page-container">
+  <BankAccountForm
+    @branchOptions={{this.branchOptions}}
+    @accountTypeOptions={{this.accountTypeOptions}}
+    @onCreateBankAccount={{action "createBankAccount"}}
+  />
+</div>
