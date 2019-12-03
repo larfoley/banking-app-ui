@@ -1,5 +1,5 @@
 # NCI Banking App
-Deployed site url -> [https://nci-banking.surge.sh/](https://nci-banking.surge.sh/)
+Deployed site url: [https://nci-banking.surge.sh/](https://nci-banking.surge.sh/)
 
 Web API project. Below are instruction to install and run the app.
 
