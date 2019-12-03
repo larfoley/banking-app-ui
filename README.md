@@ -3,7 +3,7 @@ Deployed site url: [https://nci-banking.surge.sh/](https://nci-banking.surge.sh/
 
 Below are instruction to install and run the app.
 
-## Depenecies
+## Dependencies
 
 You will need the following things properly installed on your computer.
 
