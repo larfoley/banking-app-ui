@@ -49,16 +49,7 @@ export default Component.extend({
 
   actions: {
     deleteUser(id) {
-      const toast = this.get('toast');
-      
       this.onDeleteUser(id)
-        .then(() => {
-          toast.success('User deleted')
-        })
-        .catch((e) => {
-          console.log(e);
-          toast.error('Unable to delete user')
-        })
     }
   }
 });

@@ -10,9 +10,19 @@ export default Component.extend({
   submit(e) {
     e.preventDefault()
 
-    get(this, 'branch').save()
-      .then(() => this.succesHandler())
-      .catch((err) => this.errorHandler(err))
+    const branch = get(this, 'branch')
+
+      branch.save()
+        .then(() => {
+          this.get('toast').success('Branch saved');
+          get(this, 'router').transitionTo('admin.branches')
+        })
+        .catch((err) => {
+          err.errors.forEach((err) => {
+            this.get('toast').error(err.detail);
+          })
+          branch.rollbackAttributes();
+        })
   },
 
   succesHandler() {

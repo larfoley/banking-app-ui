@@ -12,20 +12,8 @@ export default Component.extend({
 
     if (this.isUpdating) {
       this.onUpdateAccountType(this.get('accountType'))
-        .then(() => {
-          toast.success('Account type updated');
-        })
-        .catch(() => {
-          toast.error('Unable to update account type');
-        })
     } else {
       this.onCreateAccountType(this.get('name'))
-        .then(() => {
-          toast.success('Account type created');
-        })
-        .catch(() => {
-          toast.error('Unable to create account type');
-        })
     }
   }
 });

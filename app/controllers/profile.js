@@ -3,7 +3,7 @@ import { A } from '@ember/array';
 import { inject as service } from '@ember/service';
 
 export default Controller.extend({
-  notifications: service('toast'),
+  toast: service('toast'),
 
   init() {
     this._super(...arguments);
@@ -12,10 +12,17 @@ export default Controller.extend({
 
   actions: {
     updateProfile(user) {
+      const toast = this.get('toast');
 
       return user.save()
         .then(() => {
-          this.get('notifications').success('Profile updated', 'Success');
+          this.get('toast').success('Profile updated', 'Success');
+        })
+        .catch((err) => {
+          err.errors.forEach((err) => {
+            toast.error(err.detail);
+          })
+          user.rollbackAttributes();
         })
     }
   }
