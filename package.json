@@ -55,7 +55,7 @@
     "ember-resolver": "^5.3.0",
     "ember-simple-auth": "^1.9.2",
     "ember-source": "~3.13.0",
-    "ember-table": "^2.2.0",
+    "ember-table": "^5.0.6",
     "ember-toastr": "^2.0.1",
     "ember-welcome-page": "^4.0.0",
     "eslint-plugin-ember": "^7.1.0",
